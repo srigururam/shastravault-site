@@ -9,7 +9,8 @@
 <meta property="og:description" content="Rare Indian texts in Sanskrit, Tamil and more, read verse by verse from the original. Every claim cited.">
 <meta property="og:image" content="https://shastravault.com/art/hero.jpg">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b3261e'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23f3c64e' font-family='serif'%3E%E0%A4%B6%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/art/favicon.png">
+<link rel="apple-touch-icon" href="/art/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
@@ -49,7 +50,7 @@ a { color: var(--red); }
 .top { position: absolute; inset: 0 0 auto 0; z-index: 3; }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
 .mark { display: flex; align-items: center; gap: 12px; color: var(--on-dark); text-decoration: none; }
-.seal { width: 40px; height: 40px; border-radius: 50%; background: var(--red); border: 2px solid var(--gold); display: grid; place-items: center; color: var(--gold-hi); font-size: 22px; line-height: 1; padding-top: 4px; }
+.seal { width: 44px; height: 44px; border-radius: 50%; display: block; }
 .mark .name { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 22px; letter-spacing: .04em; }
 nav a { color: var(--on-dark); text-decoration: none; margin-left: 26px; font-size: 16px; letter-spacing: .04em; opacity: .9; }
 nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
@@ -116,7 +117,7 @@ h2 { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.08; margin: 10px 0 16px
 
 /* closing */
 .close { text-align: center; background: var(--paper-2); }
-.close .seal { width: 64px; height: 64px; font-size: 34px; margin: 0 auto 18px; }
+.close .seal { width: 72px; height: 72px; margin: 0 auto 18px; }
 .close h2 { max-width: 760px; margin-left: auto; margin-right: auto; }
 .close .btns { justify-content: center; margin-top: 28px; }
 .close .btn-ghost { color: var(--ink); border-color: var(--line); }
@@ -151,7 +152,7 @@ footer a { color: var(--muted); }
 
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="/" aria-label="Shastra Vault home"><span class="seal dev">श</span><span class="name">Shastra Vault</span></a>
+    <a class="mark" href="/" aria-label="Shastra Vault home"><img class="seal" src="/art/seal.png" alt=""><span class="name">Shastra Vault</span></a>
     <nav><a href="#season-1">Season 1</a><a href="#rules">How we work</a><a class="yt" href="https://www.youtube.com/@shastravault">YouTube</a><a class="yt ig" href="https://www.instagram.com/shastravault/">Instagram</a></nav>
   </div>
 </header>
@@ -235,7 +236,7 @@ footer a { color: var(--muted); }
 
 <section class="close">
   <div class="wrap">
-    <div class="seal dev">श</div>
+    <img class="seal" src="/art/seal.png" alt="">
     <h2 class="display">Follow the reading as it happens.</h2>
     <p class="lede" style="margin:0 auto">New episodes on YouTube, short stories from the verses on Instagram.</p>
     <div class="btns">
