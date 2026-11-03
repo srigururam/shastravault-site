@@ -4,68 +4,252 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shastra Vault</title>
-<meta name="description" content="Rare Indian texts, translated verse by verse from the Sanskrit. Every claim cited.">
+<meta name="description" content="Rare Indian texts, read verse by verse from the Sanskrit. Every claim cited. Season 1: the Mallapurāṇa, a medieval manual of wrestling.">
+<meta property="og:title" content="Shastra Vault">
+<meta property="og:description" content="Rare Indian texts, read verse by verse from the Sanskrit. Every claim cited.">
+<meta property="og:image" content="https://shastravault.com/art/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b3261e'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23f3c64e' font-family='serif'%3E%E0%A4%B6%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root { --bg: #f6efe0; --card: #fbf6ea; --ink: #2a2118; --muted: #7a6a55; --rule: #b3261e; --line: #e2d5bb; --on-rule: #fff8ec; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --bg: #17130e; --card: #1f1a13; --ink: #ece2cf; --muted: #a8977c; --rule: #e0675d; --line: #3a3124; --on-rule: #17130e; }
+:root {
+  --paper: #f4ead6; --paper-2: #efe2c6; --card: #fbf5e8; --ink: #2a1d14; --muted: #6f5d48;
+  --red: #a8291f; --red-deep: #7d1c15; --blue: #1c2f6e; --blue-deep: #111d47; --gold: #c99a2e; --gold-hi: #f0c75a;
+  --line: #dccaa6; --on-dark: #f6ecd8; --on-dark-muted: #c9bba0;
 }
-:root[data-theme="dark"] { --bg: #17130e; --card: #1f1a13; --ink: #ece2cf; --muted: #a8977c; --rule: #e0675d; --line: #3a3124; --on-rule: #17130e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17120d; --paper-2: #1e1811; --card: #221b13; --ink: #efe4cf; --muted: #b3a283; --line: #3b3022;
+    --red: #e0675d; --red-deep: #a8291f;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #17120d; --paper-2: #1e1811; --card: #221b13; --ink: #efe4cf; --muted: #b3a283; --line: #3b3022;
+  --red: #e0675d; --red-deep: #a8291f;
+}
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 19px/1.6 "EB Garamond", Georgia, serif; }
-main { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
-.brand { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: var(--rule); font-weight: 600; }
-h1 { font-size: 46px; line-height: 1.1; margin: 8px 0 6px; }
-.dev { font-family: "Noto Serif Devanagari", serif; color: var(--muted); font-size: 20px; }
-.lead { font-size: 22px; margin: 18px 0 8px; }
-.rule { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
-h2 { font-size: 24px; margin: 0 0 12px; }
-.card { display: block; background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--rule); border-radius: 8px; padding: 16px 20px; margin: 12px 0; color: inherit; text-decoration: none; }
-.card:hover { border-color: var(--rule); }
-.card .k { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--rule); font-weight: 600; }
-.card .t { font-size: 22px; font-weight: 600; margin: 2px 0; }
-.card .d { color: var(--muted); font-size: 16px; }
-ul.rules { padding-left: 20px; margin: 0; }
-ul.rules li { margin: 4px 0; }
-.links a { display: inline-block; margin: 0 14px 8px 0; color: var(--rule); font-weight: 600; }
-footer { margin-top: 56px; font-size: 15px; color: var(--muted); }
-a { color: var(--rule); }
-@media (max-width: 520px) { h1 { font-size: 36px; } .lead { font-size: 20px; } }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 19px/1.6 "EB Garamond", Georgia, serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: var(--red); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.display { font-family: "Cormorant Garamond", "EB Garamond", serif; font-weight: 600; letter-spacing: -.01em; }
+.dev { font-family: "Noto Serif Devanagari", serif; }
+.kicker { font-size: 13px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: var(--red); }
+
+/* manuscript border band: gold lozenges on red between hairlines */
+.band { height: 22px; background:
+  linear-gradient(var(--gold), var(--gold)) top/100% 2px no-repeat,
+  linear-gradient(var(--gold), var(--gold)) bottom/100% 2px no-repeat,
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='22'%3E%3Crect width='28' height='22' fill='%23a8291f'/%3E%3Cpath d='M14 4 L21 11 L14 18 L7 11Z' fill='%23c99a2e'/%3E%3Ccircle cx='14' cy='11' r='2.2' fill='%231c2f6e'/%3E%3Ccircle cx='0' cy='11' r='1.6' fill='%23f0c75a'/%3E%3Ccircle cx='28' cy='11' r='1.6' fill='%23f0c75a'/%3E%3C/svg%3E") center/28px 22px repeat-x; }
+
+/* header */
+.top { position: absolute; inset: 0 0 auto 0; z-index: 3; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
+.mark { display: flex; align-items: center; gap: 12px; color: var(--on-dark); text-decoration: none; }
+.seal { width: 40px; height: 40px; border-radius: 50%; background: var(--red); border: 2px solid var(--gold); display: grid; place-items: center; color: var(--gold-hi); font-size: 22px; line-height: 1; padding-top: 4px; }
+.mark .name { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 22px; letter-spacing: .04em; }
+nav a { color: var(--on-dark); text-decoration: none; margin-left: 26px; font-size: 16px; letter-spacing: .04em; opacity: .9; }
+nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+
+/* hero */
+.hero { position: relative; min-height: min(92vh, 860px); display: flex; align-items: center; color: var(--on-dark); background: var(--blue-deep); overflow: hidden; }
+.hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,22,56,.8) 0, rgba(14,22,56,0) 150px), linear-gradient(90deg, rgba(14,22,56,.92) 0%, rgba(14,22,56,.72) 38%, rgba(14,22,56,0) 68%), linear-gradient(0deg, rgba(14,22,56,.55), rgba(14,22,56,0) 30%); }
+nav a { text-shadow: 0 1px 8px rgba(10,16,40,.9); }
+.hero .wrap { position: relative; z-index: 2; width: 100%; padding-top: 110px; padding-bottom: 90px; }
+.hero-text { max-width: 560px; }
+.hero h1 { font-size: clamp(44px, 6.4vw, 82px); line-height: 1.02; margin: 14px 0 10px; }
+.hero h1 em { color: var(--gold-hi); font-style: italic; }
+.hero .dev { color: var(--gold-hi); font-size: 22px; opacity: .9; }
+.hero p.lead { font-size: 21px; color: var(--on-dark-muted); margin: 18px 0 30px; max-width: 480px; }
+.hero .kicker { color: var(--gold-hi); }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 17px; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-gold { background: var(--gold-hi); color: #2a1d14; }
+.btn-gold:hover { background: #f6d47a; }
+.btn-ghost { color: var(--on-dark); border: 1.5px solid rgba(246,236,216,.55); }
+.btn-ghost:hover { border-color: var(--on-dark); }
+
+/* sections */
+section { padding: 96px 0; }
+h2 { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.08; margin: 10px 0 16px; }
+.lede { font-size: 21px; color: var(--muted); max-width: 640px; }
+
+/* season 1 */
+.season { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.frame { position: relative; padding: 10px; background: var(--red); border: 2px solid var(--gold); box-shadow: 0 1px 0 var(--gold) inset, 0 24px 60px -24px rgba(60,30,10,.45); }
+.frame::before { content: ""; position: absolute; inset: 4px; border: 1px solid var(--gold-hi); pointer-events: none; }
+.frame img { width: 100%; aspect-ratio: 3/2; object-fit: cover; }
+.meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 26px; }
+.chip { font-size: 15px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); }
+.ep { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--red); border-radius: 10px; padding: 18px 22px; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
+.ep:hover { border-color: var(--red); transform: translateY(-2px); }
+.ep .num { font-size: 44px; line-height: 1; color: var(--red); }
+.ep .k { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+.ep .t { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 25px; line-height: 1.15; margin: 2px 0 4px; }
+.ep .d { font-size: 16px; color: var(--muted); }
+
+/* rules */
+.rules-sec { background: var(--blue-deep); color: var(--on-dark); position: relative; }
+.rules-sec .kicker { color: var(--gold-hi); }
+.rules-sec .lede { color: var(--on-dark-muted); }
+.rules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px; }
+.rule { border: 1px solid rgba(240,199,90,.35); border-radius: 10px; padding: 24px 22px 22px; background: rgba(255,255,255,.03); }
+.rule .n { font-size: 38px; color: var(--gold-hi); line-height: 1; }
+.rule h3 { font-family: "Cormorant Garamond", serif; font-size: 24px; line-height: 1.15; margin: 14px 0 8px; }
+.rule p { margin: 0; font-size: 16.5px; color: var(--on-dark-muted); }
+
+/* shelf */
+.shelf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 44px; }
+.book { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.book .img { position: relative; background: var(--red); }
+.book .img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 30%; }
+.book .soon { position: absolute; top: 12px; left: 12px; background: rgba(17,29,71,.85); color: var(--gold-hi); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+.book .body { padding: 18px 20px 20px; }
+.book h3 { font-family: "Cormorant Garamond", serif; font-size: 27px; line-height: 1.1; margin: 0 0 2px; }
+.book .sa { font-size: 15px; color: var(--red); margin-bottom: 8px; }
+.book p { margin: 0; font-size: 16.5px; color: var(--muted); }
+
+/* closing */
+.close { text-align: center; background: var(--paper-2); }
+.close .seal { width: 64px; height: 64px; font-size: 34px; margin: 0 auto 18px; }
+.close h2 { max-width: 760px; margin-left: auto; margin-right: auto; }
+.close .btns { justify-content: center; margin-top: 28px; }
+.close .btn-ghost { color: var(--ink); border-color: var(--line); }
+.close .btn-ghost:hover { border-color: var(--ink); }
+.close .btn-gold { background: var(--red-deep); color: var(--on-dark); }
+footer { padding: 28px 0 40px; font-size: 15px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .season { grid-template-columns: 1fr; gap: 32px; }
+  .rules { grid-template-columns: 1fr 1fr; }
+  .shelf { grid-template-columns: 1fr; max-width: 460px; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  nav a:not(.yt) { display: none; }
+  .hero { min-height: 640px; align-items: flex-end; }
+  .hero picture img { object-position: 78% 50%; }
+  .hero::after { background: linear-gradient(0deg, rgba(14,22,56,.96) 0%, rgba(14,22,56,.8) 48%, rgba(14,22,56,.15) 100%); }
+  .hero .wrap { padding-bottom: 48px; }
+  .hero p.lead { font-size: 19px; }
+  section { padding: 64px 0; }
+  .rules { grid-template-columns: 1fr; }
+  .ep { grid-template-columns: 1fr; gap: 6px; }
+  body { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
-<main>
-<div class="brand">Shastra Vault</div>
-<h1>Rare Indian texts, verse by verse.</h1>
-<div class="dev">शास्त्र</div>
-<p class="lead">We open śāstras that few people have read and translate them straight from the Sanskrit, with every claim tied to a verse you can check.</p>
-<p class="links"><a href="https://www.youtube.com/@shastravault">YouTube</a><a href="https://www.instagram.com/shastravault/">Instagram</a></p>
 
-<hr class="rule">
-<h2>Season 1 · Mallapurāṇa</h2>
-<p>A medieval Sanskrit manual of wrestling, in which Krishna teaches the science to a young scholar.</p>
-<a class="card" href="mallapurana/episode-01">
-  <div class="k">Episode 1 · Adhyāyas I–II</div>
-  <div class="t">Krishna Gave His Wrestling to a Scholar, Not a King</div>
-  <div class="d">All 78 surviving verses, in Sanskrit and English, with every variant and uncertainty.</div>
-</a>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="Shastra Vault home"><span class="seal dev">श</span><span class="name">Shastra Vault</span></a>
+    <nav><a href="#season-1">Season 1</a><a href="#rules">How we work</a><a class="yt" href="https://www.youtube.com/@shastravault">YouTube</a></nav>
+  </div>
+</header>
 
-<hr class="rule">
-<h2>Our rules</h2>
-<ul class="rules">
-  <li>Every claim is tied to a verse number.</li>
-  <li>Where pages are missing, we show the gap. We don't fill it.</li>
-  <li>Where we add our own commentary, we say so.</li>
-  <li>Translations are made with AI assistance and checked against the printed Sanskrit edition. Narration and paintings in our videos are AI-generated.</li>
-</ul>
+<section class="hero" aria-label="Introduction">
+  <picture>
+    <source srcset="art/hero-900.jpg" media="(max-width: 640px)">
+    <img src="art/hero.jpg" alt="A painting in the old Gujarati manuscript style: a lamp-lit stone doorway opening onto shelves of manuscripts wrapped in red cloth, a peacock on the threshold." fetchpriority="high">
+  </picture>
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="kicker">Rare Indian texts</div>
+      <h1 class="display">Opened<br><em>verse by verse.</em></h1>
+      <div class="dev" lang="sa">शास्त्रकोशः</div>
+      <p class="lead">We open śāstras that few people have read and tell their stories straight from the Sanskrit, with every claim tied to a verse you can check.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="#season-1">Start with Season 1</a>
+        <a class="btn btn-ghost" href="https://www.youtube.com/@shastravault">Watch on YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="band" role="presentation"></div>
+
+<section id="season-1">
+  <div class="wrap season">
+    <div class="frame"><img src="art/akhara.jpg" alt="Two young wrestlers kneel and touch the red earth of an akhāṛā in salute at dawn, an old teacher watching under a banyan tree." loading="lazy"></div>
+    <div>
+      <div class="kicker">Now reading · Season 1</div>
+      <h2 class="display">Mallapurāṇa <span class="dev" style="font-size:.55em;color:var(--muted)" lang="sa">मल्लपुराणम्</span></h2>
+      <p class="lede">A medieval Sanskrit manual of wrestling, in which Krishna hands the science to a young scholar. Body types, training, diet, the coach's forty-one arts, and a promise of mokṣa.</p>
+      <div class="meta"><span class="chip">18 chapters</span><span class="chip">1964 Baroda edition</span><span class="chip">Free translation</span></div>
+      <a class="ep" href="mallapurana/episode-01">
+        <span class="num display">I</span>
+        <span>
+          <span class="k">Episode 1 · Adhyāyas I–II</span>
+          <span class="t" style="display:block">Krishna Gave His Wrestling to a Scholar, Not a King</span>
+          <span class="d">All 78 surviving verses, Sanskrit and English, with every variant and doubt →</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="rules-sec" id="rules">
+  <div class="wrap">
+    <div class="kicker">How we work</div>
+    <h2 class="display">A story you can check.</h2>
+    <p class="lede">Our videos are made to be gripping. Our pages are made to be checked. Neither invents anything.</p>
+    <div class="rules">
+      <div class="rule"><div class="n dev">१</div><h3>Every claim has a verse</h3><p>Each line we narrate points to a verse number, shown on screen and listed here.</p></div>
+      <div class="rule"><div class="n dev">२</div><h3>Gaps stay gaps</h3><p>Where pages are missing, we show the hole. We never fill it with guesses.</p></div>
+      <div class="rule"><div class="n dev">३</div><h3>Our words are marked</h3><p>When we add commentary, we say it's ours. Doubtful readings are flagged as doubtful.</p></div>
+      <div class="rule"><div class="n dev">४</div><h3>Honest about tools</h3><p>Translations are AI-assisted and checked against the printed Sanskrit. Voices and paintings are AI-made.</p></div>
+    </div>
+  </div>
+</section>
+<div class="band" role="presentation"></div>
+
+<section id="shelf">
+  <div class="wrap">
+    <div class="kicker">On the shelf</div>
+    <h2 class="display">Seasons we're preparing.</h2>
+    <p class="lede">Each season is one book. These are next in line; we start a season only once its text is in hand.</p>
+    <div class="shelf">
+      <article class="book">
+        <div class="img"><span class="soon">Planned</span><img src="art/season_kitchen.jpg" alt="A royal cook stirs a great brass vessel over a fire among baskets of spices." loading="lazy"></div>
+        <div class="body"><h3>Mānasollāsa</h3><div class="sa dev" lang="sa">मानसोल्लासः</div><p>A king's encyclopedia of royal life, from his kitchen to his pastimes.</p></div>
+      </article>
+      <article class="book">
+        <div class="img"><span class="soon">Planned</span><img src="art/season_archer.jpg" alt="An archer in a deep stance draws a long bamboo bow toward a bird." loading="lazy"></div>
+        <div class="body"><h3>Dhanurveda</h3><div class="sa dev" lang="sa">धनुर्वेदः</div><p>The science of the bow: stances, training and the warrior's craft.</p></div>
+      </article>
+      <article class="book">
+        <div class="img"><span class="soon">Planned</span><img src="art/season_garden.jpg" alt="A gardener pours water at the root of a flowering mango tree in a walled garden." loading="lazy"></div>
+        <div class="body"><h3>Vṛkṣāyurveda</h3><div class="sa dev" lang="sa">वृक्षायुर्वेदः</div><p>The āyurveda of trees: how to plant, feed and heal a garden.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <div class="seal dev">श</div>
+    <h2 class="display">Follow the reading as it happens.</h2>
+    <p class="lede" style="margin:0 auto">New episodes on YouTube, short stories from the verses on Instagram.</p>
+    <div class="btns">
+      <a class="btn btn-gold" href="https://www.youtube.com/@shastravault">YouTube</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/shastravault/">Instagram</a>
+    </div>
+  </div>
+</section>
 
 <footer>
-<hr class="rule">
-<p>Spotted an error? Write to <a href="mailto:shastravault@gmail.com">shastravault@gmail.com</a>.</p>
+  <div class="wrap">
+    <span>© 2026 Shastra Vault · Paintings on this site are AI-generated in the style of Western Indian manuscript painting.</span>
+    <span>Spotted an error? <a href="mailto:shastravault@gmail.com">shastravault@gmail.com</a></span>
+  </div>
 </footer>
-</main>
 </body>
 </html>
